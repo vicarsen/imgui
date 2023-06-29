@@ -2790,8 +2790,6 @@ static void ShowDemoWindowMultiSelect()
                     bool item_is_selected = selection.GetSelected(n);
                     ImGui::SetNextItemSelectionUserData(n);
                     ImGui::Selectable(label, item_is_selected);
-                    if (ImGui::IsItemToggledSelection())
-                        selection.SetSelected(n, !item_is_selected);
                 }
 
                 // Apply multi-select requests
@@ -2831,8 +2829,6 @@ static void ShowDemoWindowMultiSelect()
                     bool item_is_selected = selection->GetSelected(n);
                     ImGui::SetNextItemSelectionUserData(n);
                     ImGui::Selectable(label, item_is_selected);
-                    if (ImGui::IsItemToggledSelection())
-                        selection->SetSelected(n, !item_is_selected);
                 }
 
                 // Apply multi-select requests
@@ -2934,8 +2930,6 @@ static void ShowDemoWindowMultiSelect()
                         if (widget_type == WidgetType_Selectable)
                         {
                             ImGui::Selectable(label, item_is_selected);
-                            if (ImGui::IsItemToggledSelection())
-                                selection.SetSelected(n, !item_is_selected);
                             if (use_drag_drop && ImGui::BeginDragDropSource())
                             {
                                 ImGui::Text("(Dragging %d items)", selection.GetSize());
@@ -2949,8 +2943,6 @@ static void ShowDemoWindowMultiSelect()
                             if (item_is_selected)
                                 tree_node_flags |= ImGuiTreeNodeFlags_Selected;
                             bool open = ImGui::TreeNodeEx(label, tree_node_flags);
-                            if (ImGui::IsItemToggledSelection())
-                                selection.SetSelected(n, !item_is_selected);
                             if (use_drag_drop && ImGui::BeginDragDropSource())
                             {
                                 ImGui::Text("(Dragging %d items)", selection.GetSize());
