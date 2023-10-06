@@ -12,3 +12,7 @@ add_library(${PROJECT_NAME}
     imgui_widgets.cpp
 )
 
+target_include_directories(${PROJECT_NAME} PUBLIC
+    ./
+)
+
