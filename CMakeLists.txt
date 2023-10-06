@@ -10,9 +10,12 @@ add_library(${PROJECT_NAME}
     imgui_draw.cpp
     imgui_tables.cpp
     imgui_widgets.cpp
+
+    ./misc/cpp/imgui_stdlib.cpp
 )
 
 target_include_directories(${PROJECT_NAME} PUBLIC
     ./
+    ./misc/cpp/
 )
 
